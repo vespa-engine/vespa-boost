@@ -70,7 +70,7 @@ Contains develompemnt headers and static libraries for vespa-boost.
 
 %build
 
-source /opt/rh/devtoolset-6/enable || true
+source /opt/rh/devtoolset-7/enable || true
 export BOOST_LIBS="iostreams,filesystem,signals,program_options,regex,serialization,system,test,thread,timer,chrono"
 export CXXFLAGS="-std=c++14 -DNOT_BOOST_SPIRIT_THREADSAFE=1 -DNOT_PHOENIX_THREADSAFE=1 -DBOOST_NO_AUTO_PTR=1"
 ./bootstrap.sh --with-libraries=$BOOST_LIBS --prefix=%{buildroot}/%{_prefix} 
@@ -79,7 +79,7 @@ export CXXFLAGS="-std=c++14 -DNOT_BOOST_SPIRIT_THREADSAFE=1 -DNOT_PHOENIX_THREAD
 %install
 
 rm -rf $RPM_BUILD_ROOT
-source /opt/rh/devtoolset-6/enable || true
+source /opt/rh/devtoolset-7/enable || true
 ./bjam -d+2 %{_smp_mflags} variant=release debug-symbols=on threading=multi link=shared runtime-link=shared dll-path=%{_prefix}/lib cxxflags=%{_cxxflags} install --layout=versioned --prefix=%{buildroot}/%{_prefix}
 
 cd %{buildroot}/%{_includedir}
