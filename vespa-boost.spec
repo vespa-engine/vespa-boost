@@ -15,8 +15,8 @@
 %define ver_release 8
 
 Name:           vespa-boost
-Version:        %{ver_major}.%{ver_minor}.%{ver_patch}
-Release:        %{ver_release}%{?dist}
+Version:        1.59.0
+Release:        8
 Summary:        The free peer-reviewed portable C++ source libraries. Built for Vespa.
 URL:            http://www.boost.org
 Group:          System Environment/Libraries
