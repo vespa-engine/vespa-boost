@@ -1,2 +1,2 @@
 # boost
-Vespa built boost with patches for warning etc.
+Patched version of boost used in Vespa
